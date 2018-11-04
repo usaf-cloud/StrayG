@@ -49,7 +49,7 @@
       <HintPath>..\packages\NLog.5.0.0-beta11\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="NLog.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\..\GRX\packages\NLog.Web.4.5.1\lib\net35\NLog.Web.dll</HintPath>
+      <HintPath>..\packages\NLog.Web.4.7.0\lib\net35\NLog.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
