@@ -43,6 +43,35 @@ namespace StrayG.Module.Security
             return true;
         }
 
+        public static bool ParseDoDSmartCard2dBarcodeScan(string barcodeScan, out string firstName, out string middleInitial, out string lastName, out string rank, out string uniqueIdentifier)
+        {
+            //initialize variables
+            firstName = string.Empty;
+            middleInitial = string.Empty;
+            lastName = string.Empty;
+            rank = string.Empty;
+            uniqueIdentifier = string.Empty;
+
+            try
+            {
+                //get rid of all periods
+                barcodeScan = barcodeScan.Replace(".", " ");
+
+                //get the needed info
+                uniqueIdentifier = barcodeScan.Substring(0, 15).Trim();
+                firstName = barcodeScan.Substring(15, 20).Trim();
+                lastName = barcodeScan.Substring(35, 26).Trim();
+                middleInitial = barcodeScan.Substring(88, 1).Trim();
+                rank = barcodeScan.Substring(67, 6).Trim().Replace("0", "");
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e);
+                return false;
+            }
+            return true;
+        }
+
         public static string SignData(string message, RSACryptoServiceProvider rsa)
         {
             //// The array to store the signed message in bytes
