@@ -7,6 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography;
 using System.IO;
 using NLog;
+using System.Text.RegularExpressions;
 
 namespace StrayG.Module.Security
 {
@@ -43,7 +44,7 @@ namespace StrayG.Module.Security
             return true;
         }
 
-        public static bool ParseDoDSmartCard2dBarcodeScan(string barcodeScan, out string firstName, out string middleInitial, out string lastName, out string rank, out string uniqueIdentifier)
+        public static bool ParseDoDSmartCard2dBarcodeScan(string barcodeScan, out string uniqueIdentifier, out string rank, out string grade, out string firstName, out string middleInitial, out string lastName)
         {
             //initialize variables
             firstName = string.Empty;
@@ -51,18 +52,44 @@ namespace StrayG.Module.Security
             lastName = string.Empty;
             rank = string.Empty;
             uniqueIdentifier = string.Empty;
+            grade = string.Empty;
 
             try
             {
+                /*formats
+                NBFBBAHS1D2D1HVZachary.            Auer.                     B3D0AF00LT.   MO01BBBSBCE3YR				
+                NBPJO8MS15I7V84Lucas.              Erickson.                 AU5HAF00LT.   MO01BBANBCCUUA				
+                NDKM154S11LK3ILRonnie.             Drisdale.                 AM6ECF00.     GS07BAD1BBF8GE				
+                N74AASES14V9317William.            Wilkerson.                AU76AF00MAJ.  MO04BAUQBC11IR				
+                NI01061S18KD5IUVincent.            Giacomino.                ATKQAF00MAJ.  MO04BB9TBCC41M				
+                NDT8MIAS14M4C56Roy.                Lozano.                   AM3KCF00.     GS09BB45BC6CVG				
+                NI7G2KDS1BNKBJMDerek.              Nguyen                    B34EAM002NDLT MO01BASDBBUDNA			
+                NI9ITVMS0UROK3OJohn.               Platt.                    AT0NAF00LTCOL MO05BABLBBDSVI				
+                NC1I2GQS1BIPOFCIsaac.              Scherrer.                 AVSEAF00CAPT. MO03BAT6BBVDIJ
+                */
                 //get rid of all periods
                 barcodeScan = barcodeScan.Replace(".", " ");
 
-                //get the needed info
-                uniqueIdentifier = barcodeScan.Substring(0, 15).Trim();
-                firstName = barcodeScan.Substring(15, 20).Trim();
-                lastName = barcodeScan.Substring(35, 26).Trim();
-                middleInitial = barcodeScan.Substring(88, 1).Trim();
-                rank = barcodeScan.Substring(67, 6).Trim().Replace("0", "");
+                //get rid of multiple spaces in a row
+                barcodeScan = Regex.Replace(barcodeScan, @"\s+", " ", RegexOptions.Multiline);
+
+                //break string up into substrings based on a space
+                string[] subStrings = barcodeScan.Split(new char[]{' '});
+
+                //get the needed info from subStrings[0]
+                uniqueIdentifier = subStrings[0].Substring(0, 15).Trim();
+                firstName = subStrings[0].Substring(15).Trim();
+
+                //get the needed info from subStrings[1]
+                lastName = subStrings[1].Trim();
+
+                //get the needed info from subStrings[2]
+                rank = subStrings[2].Substring(subStrings[2].IndexOf("00")+2);
+                if (rank == string.Empty) rank = "CIV";
+
+                //get the needed info from subStrings[3]
+                grade = subStrings[3].Substring(0, 4);
+                middleInitial = subStrings[3].Last().ToString();
             }
             catch (Exception e)
             {
