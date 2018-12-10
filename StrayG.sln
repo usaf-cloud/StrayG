@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayG.Walmart", "StrayG.Wa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayG.WF", "StrayG.WF\StrayG.WF.csproj", "{E26C0AAD-80E8-4881-967A-A9B554FFE937}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayG.MDM", "StrayG.MDM\StrayG.MDM.csproj", "{CDB184C4-0E13-44E4-8B88-86A2EFFB344B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{E26C0AAD-80E8-4881-967A-A9B554FFE937}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E26C0AAD-80E8-4881-967A-A9B554FFE937}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E26C0AAD-80E8-4881-967A-A9B554FFE937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDB184C4-0E13-44E4-8B88-86A2EFFB344B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB184C4-0E13-44E4-8B88-86A2EFFB344B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB184C4-0E13-44E4-8B88-86A2EFFB344B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB184C4-0E13-44E4-8B88-86A2EFFB344B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
