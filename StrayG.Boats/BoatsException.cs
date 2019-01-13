@@ -6,7 +6,7 @@ namespace StrayG.Boats
     using Data;
 
     /// <summary>
-    /// The Boats exception.
+    /// The Boats exception
     /// </summary>
     public class BoatsException : Exception
     {
