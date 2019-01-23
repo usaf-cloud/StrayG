@@ -1,10 +1,9 @@
 ﻿using System;
+using System.Net;
+using Data;
+
 namespace StrayG.Boats
 {
-    using System;
-    using System.Net;
-    using Data;
-
     /// <summary>
     /// The Boats exception
     /// </summary>
