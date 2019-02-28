@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayG.Amazon", "StrayG.Amazon\StrayG.Amazon.csproj", "{BA252FD9-CCEC-45F8-8686-1C49F06E3513}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayG.Boats", "StrayG.Boats\StrayG.Boats.csproj", "{1F18D278-DAEE-49DD-B335-7F41BFB9C8AC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayG.Core", "StrayG.Core\StrayG.Core.csproj", "{B105C02B-5DC2-4338-B058-B2FEDE130922}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayG.Module", "StrayG.Module\StrayG.Module.csproj", "{1F76BB1B-3EF4-4361-A276-B884C9BDF4C5}"
@@ -23,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayG.Walmart", "StrayG.Wa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayG.WF", "StrayG.WF\StrayG.WF.csproj", "{E26C0AAD-80E8-4881-967A-A9B554FFE937}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrayG.MDM", "StrayG.MDM\StrayG.MDM.csproj", "{CDB184C4-0E13-44E4-8B88-86A2EFFB344B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrayG.MDM", "StrayG.MDM\StrayG.MDM.csproj", "{CDB184C4-0E13-44E4-8B88-86A2EFFB344B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{BA252FD9-CCEC-45F8-8686-1C49F06E3513}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA252FD9-CCEC-45F8-8686-1C49F06E3513}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA252FD9-CCEC-45F8-8686-1C49F06E3513}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F18D278-DAEE-49DD-B335-7F41BFB9C8AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F18D278-DAEE-49DD-B335-7F41BFB9C8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F18D278-DAEE-49DD-B335-7F41BFB9C8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F18D278-DAEE-49DD-B335-7F41BFB9C8AC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B105C02B-5DC2-4338-B058-B2FEDE130922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B105C02B-5DC2-4338-B058-B2FEDE130922}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B105C02B-5DC2-4338-B058-B2FEDE130922}.Release|Any CPU.ActiveCfg = Release|Any CPU
