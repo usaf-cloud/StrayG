@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Claims;
@@ -22,7 +23,10 @@ namespace StrayG.Security.USAF
 
         public USAFOAuth2AuthenticationHandler(HttpClient httpClient, ILogger logger)
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             _httpClient = httpClient;
+         
             _logger = logger;
         }
 
@@ -69,8 +73,10 @@ namespace StrayG.Security.USAF
                 body.Add(new KeyValuePair<string, string>("redirect_uri", redirectUri));
                 body.Add(new KeyValuePair<string, string>("client_id", Options.ClientId));
                 body.Add(new KeyValuePair<string, string>("client_secret", Options.ClientSecret));
+                body.Add(new KeyValuePair<string, string>("state", state));
 
                 // Request the token
+                FormUrlEncodedContent encodedContent = new FormUrlEncodedContent(body);
                 HttpResponseMessage tokenResponse =
                     await _httpClient.PostAsync(Options.TokenEndpoint, new FormUrlEncodedContent(body));
                 tokenResponse.EnsureSuccessStatusCode();
@@ -189,7 +195,7 @@ namespace StrayG.Security.USAF
                 {
                     // USAF OAuth 2.0 asks for non-empty scope. If user didn't set it, set default scope to 
                     // "openid profile email" to get basic user information.
-                    scope = "openid profile email";
+                    scope = "*";
                 }
                 AddQueryString(queryStrings, properties, "scope", scope);
 
