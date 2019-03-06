@@ -61,6 +61,8 @@
     <Compile Include="BusinessObjects\AbstractAuditType.cs" />
     <Compile Include="BusinessObjects\AbstractNameType.cs" />
     <Compile Include="BusinessObjects\EmailEntity.cs" />
+    <Compile Include="BusinessObjects\MaaS360ConnectionInfo.cs" />
+    <Compile Include="BusinessObjects\MDMConnectionInfo.cs" />
     <Compile Include="BusinessObjects\OAuthUser.cs" />
     <Compile Include="BusinessObjects\SmartCardUser.cs" />
     <Compile Include="Interfaces\IAuthenticationOAuthUser.cs" />

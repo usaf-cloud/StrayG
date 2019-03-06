@@ -67,10 +67,6 @@
       <Project>{b105c02b-5dc2-4338-b058-b2fede130922}</Project>
       <Name>StrayG.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StrayG.MDM\StrayG.MDM.csproj">
-      <Project>{cdb184c4-0e13-44e4-8b88-86a2effb344b}</Project>
-      <Name>StrayG.MDM</Name>
-    </ProjectReference>
     <ProjectReference Include="..\StrayG.Plaid\StrayG.Plaid.csproj">
       <Project>{ea123129-b1b7-4bae-9220-d53c6b3ffc1f}</Project>
       <Name>StrayG.Plaid</Name>
