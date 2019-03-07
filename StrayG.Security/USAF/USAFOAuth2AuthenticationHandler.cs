@@ -23,10 +23,7 @@ namespace StrayG.Security.USAF
 
         public USAFOAuth2AuthenticationHandler(HttpClient httpClient, ILogger logger)
         {
-            ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             _httpClient = httpClient;
-         
             _logger = logger;
         }
 
