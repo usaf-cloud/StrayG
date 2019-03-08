@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
-namespace StrayG.MDM.MaaS360.Data.Contracts.Response
+namespace StrayG.MDM.MaaS360.Data.Contracts.Request
 {
     [Serializable()]
-    public abstract class MaaS360Response
+    [XmlRoot("authRequest")]
+    public class AuthRequest
     {
-        public string RequestId { get; set; }
+        
     }
 }

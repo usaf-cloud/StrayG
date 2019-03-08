@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMDMClient.cs" />
+    <Compile Include="MaaS360\Data\Contracts\Request\AuthRequest.cs" />
+    <Compile Include="MaaS360\Data\Contracts\Request\MaaS360AdminAuth.cs" />
+    <Compile Include="MaaS360\Data\Contracts\Request\MaaS360Request.cs" />
     <Compile Include="MaaS360\Data\Contracts\Response\ErrorResponse.cs" />
     <Compile Include="MaaS360\Data\Contracts\Response\MaaS360Response.cs" />
     <Compile Include="MaaS360\Data\ErrorCode.cs" />
@@ -69,7 +72,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MaaS360\Data\Contracts\Request\" />
     <Folder Include="MaaS360\Data\Contracts\Results\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
